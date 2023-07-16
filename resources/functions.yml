@@ -1,0 +1,45 @@
+createAccount:
+  handler: src/handlers/create-account.handler
+  timeout: 30
+  memorySize: 128
+  events:
+    - httpApi:
+        path: /auth/signup
+        method: post
+
+confirmAccount:
+  handler: src/handlers/confirm-account.handler
+  timeout: 30
+  memorySize: 128
+  events:
+    - httpApi:
+        path: /auth/confirm
+        method: post
+
+authenticateAccount:
+  handler: src/handlers/authenticate-account.handler
+  timeout: 30
+  memorySize: 128
+  events:
+    - httpApi:
+        path: /auth/signin
+        method: post
+
+validateToken:
+  handler: src/handlers/validate-token.handler
+  timeout: 30
+  memorySize: 128
+  events:
+    - httpApi:
+        path: /auth/validate-token
+        method: get
+
+refreshToken:
+  handler: src/handlers/refresh-token.handler
+  timeout: 30
+  memorySize: 128
+  events:
+    - httpApi:
+        path: /auth/refresh-token
+        method: get
+        
